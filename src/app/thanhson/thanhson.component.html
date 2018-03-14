@@ -1,3 +1,22 @@
-<p>
-  thanhson works!
-</p>
+<form class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Giá Sản Phẩm" [(ngModel)]="price" (keyup)="change()">
+
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Số lượng" [(ngModel)]="amount" (keyup)="change()">
+
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Discount" [(ngModel)]="discount" (keyup)="change()">
+
+  </mat-form-field>
+
+
+
+
+</form>
+<p> Thành Tiền : {{isValue}} </p>

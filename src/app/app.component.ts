@@ -9,23 +9,27 @@ import {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  checked = false;
+  indeterminate = false;
+  align = 'start';
+  disabled = false;
   message = `This message can be printable`;
   title = `Wellcome to my Angular`;
   heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
   myHero = this.heroes[0];
   printable = true;
   contacts = [{
-      name: 'thanhson',
-      id: 1
-    },
-    {
-      name: 'congvinh',
-      id: 2
-    },
-    {
-      name: 'congphuong',
-      id: 3
-    }
+    name: 'thanhson',
+    id: 1
+  },
+  {
+    name: 'congvinh',
+    id: 2
+  },
+  {
+    name: 'congphuong',
+    id: 3
+  }
 
 
 

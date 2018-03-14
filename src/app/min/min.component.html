@@ -1,26 +1,23 @@
-<h2>Min App Works</h2>
-<input type="text" name="" id="">
-<button [style.color]="isSpecial ? 'red': 'green'">Some button</button>
-<button (click)="onSave()">Save</button>
-<div [ngStyle]="currentStyles">
-  This div is initially italic, normal weight, and extra large (24px).
-</div>
-<button class="btn" [ngClass]="'active btn-primary'">
-  String binding
-</button>
-<table border=1 class="bang">
-  <!--  expression calculates colspan=2 -->
-  <tr>
-    <td [attr.colspan]="1 + 1">One-Two</td>
-  </tr>
+<h1  [ngStyle]="{color:'red'}" [style.color]="'green'" >My name is {{name}}</h1>
+<form class="example-form">
 
-  <!-- ERROR: There is no `colspan` property to set!
-    <tr><td colspan="{{1 + 1}}">Three-Four</td></tr>
-  -->
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Giá Sản Phẩm" (keyup)="onKey($event)" >
 
-  <tr>
-    <td>Five</td>
-    <td>Six</td>
-  </tr>
-</table>
-<div [class.special]="isSpecial">The class binding is special</div>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Số lượng" (keyup)="onKey1($event)" >
+
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Discount" (keyup)="onKey2($event)">
+
+  </mat-form-field>
+
+
+
+
+</form>
+<p> Thành Tiền :   {{isValue}}   </p>

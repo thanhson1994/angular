@@ -1,19 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
-
-
+import {ImportModule} from './import/import.module';
 import { AppComponent } from './app.component';
 import { ThanhsonComponent } from './thanhson/thanhson.component';
 import { MinComponent } from './min/min.component';
 import { HeroComponent } from './hero/hero.component';
+// import { LtComponent } from './lt/lt.component';
+// import { ImportComponent } from './import/import.component';
 
 
 @NgModule({
@@ -21,16 +19,17 @@ import { HeroComponent } from './hero/hero.component';
     AppComponent,
     ThanhsonComponent,
     MinComponent,
-    HeroComponent
+    HeroComponent,
+    // LtComponent,
+    // ImportComponent
   ],
   imports: [
 
     BrowserModule,
     FormsModule,
-    MatTabsModule,
-   MatButtonModule,
-   BrowserAnimationsModule,
-   MatIconModule
+    BrowserAnimationsModule,
+    ImportModule
+
 
   ],
   providers: [],
