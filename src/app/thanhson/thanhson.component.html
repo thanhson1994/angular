@@ -1,4 +1,4 @@
-<form class="example-form">
+<!-- <form class="example-form">
 
   <mat-form-field class="example-full-width">
     <input type="number" matInput placeholder="Giá Sản Phẩm" [(ngModel)]="price" (keyup)="change()">
@@ -19,4 +19,33 @@
 
 
 </form>
-<p> Thành Tiền : {{isValue}} </p>
+<p> Thành Tiền : {{isValue}} </p> -->
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Position</th>
+      <th scope="col">Club</th>
+      <th scope="col">Played</th>
+      <th scope="col">Won</th>
+      <th scope="col">Drawn</th>
+      <th scope="col">Lost</th>
+      <th scope="col">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pri of primerleague">
+      <th  scope="row">{{pri.id}}</th>
+      <td>{{pri.club}}</td>
+      <td>{{pri.played}}</td>
+      <td>{{pri.won}}</td>
+       <td>{{pri.drawn}}</td>
+       <td>{{pri.lost}}</td>
+      <td>{{pri.points}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+  </tbody>
+</table>

@@ -26,8 +26,8 @@ export class MinComponent implements OnInit {
   canSave = false;
   isSpecial = true;
   isValue;
-  giaSp;
-  soLuong;
+  price;
+  amount;
   discount;
   currentClass: {};
   currentStyles: {};
@@ -47,16 +47,21 @@ export class MinComponent implements OnInit {
     return this.currentStyles;
   }
   onKey(event: KeyboardEvent) {
-    this.giaSp = (<HTMLInputElement>event.target).value;
-
+    this.price = (<HTMLInputElement>event.target).value;
+    this.calc();
+  }
+  private calc() {
+    if (this.price && this.amount && this.discount) {
+      this.isValue = ((this.price * (100 - this.discount)) / 100) * this.amount;
+    }
   }
   onKey1(event: KeyboardEvent) {
-    this.soLuong = (<HTMLInputElement>event.target).value;
-
+    this.amount = (<HTMLInputElement>event.target).value;
+    this.calc();
   }
   onKey2(event: KeyboardEvent) {
     this.discount = (<HTMLInputElement>event.target).value;
-    this.isValue = ((this.giaSp * (100 - this.discount) / 100) * this.soLuong;
+    this.calc();
 
   }
 

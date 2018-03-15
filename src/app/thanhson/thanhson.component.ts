@@ -40,6 +40,41 @@ export class ThanhsonComponent implements OnInit {
   //   this.isValue = ((this.giaSp * this.discount) / 100) * this.soLuong;
 
   // }
+  primerleague = [{
+    id: 1,
+    club: 'Manchester United',
+    played: 38,
+    won: 31,
+    drawn: 4,
+    lost: 3,
+    points: 90
+  }, {
+    id: 2,
+    club: 'Manchester City',
+    played: 38,
+    won: 29,
+    drawn: 3,
+    lost: 6,
+    points: 82
+  }, {
+    id: 3,
+    club: 'Tottenham Hotspur',
+    played: 38,
+    won: 26,
+    drawn: 6,
+    lost: 6,
+    points: 77
+  }, {
+    id: 4,
+    club: 'Chelsea',
+    played: 38,
+    won: 25,
+    drawn: 8,
+    lost: 5,
+    points: 70
+  }
+  ];
+
 
   constructor() { }
 
