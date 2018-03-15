@@ -35,17 +35,30 @@
   </thead>
   <tbody>
     <tr *ngFor="let pri of primerleague">
-      <th  scope="row">{{pri.id}}</th>
-      <td>{{pri.club}}</td>
-      <td>{{pri.played}}</td>
-      <td>{{pri.won}}</td>
-       <td>{{pri.drawn}}</td>
-       <td>{{pri.lost}}</td>
-      <td>{{pri.points}}</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row">{{pri.id}}</th>
+      <td>{{pri?.club}}</td>
+      <td>{{pri?.played}}</td>
+      <td>{{pri?.won}}</td>
+      <td>{{pri?.drawn}}</td>
+      <td>{{pri?.lost}}</td>
+      <td>{{pri?.points}}</td>
+
     </tr>
 
   </tbody>
 </table>
+<div *ngFor="let pri of primerleague; trackBy :  trackByPrimerleague">{{pri.id}} - {{pri.club}}</div>
+<h1> {{title}} </h1>
+<div>
+  <input type="text" (change)="onInput($event)">
+  <button (click)="onClick()">Button...</button>
+</div>
+<ul *ngFor="let mess of message">
+  <li>{{mess}}</li>
+</ul>
+<input type="text" [(ngModel)]="currentHero.name" (ngModelChange)="currentHero.name=$event">
+<!-- <div>
+  <img [src]="avatarUrl" [ngClass]="{'lts-avatar:round'}">
+</div> -->
+<p [ngClass]="{'lts-avatar':round}"> I love you {{ avatarUrl | json }} </p>
+<div>{{$any(currentHero).name}}</div>

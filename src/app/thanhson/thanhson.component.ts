@@ -1,13 +1,63 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-
+import {  Input } from '@angular/core';
 @Component({
   selector: 'lts-thanhson',
   templateUrl: './thanhson.component.html',
   styleUrls: ['./thanhson.component.scss']
+
+
 })
 export class ThanhsonComponent implements OnInit {
+  @Input() round: Boolean = false;
+  @Input() avatarUrl: string = '';
 
+  title = 'Quản lí Event';
+  message = [];
+  currentHero = { name: 1123 };
+  primerleague = [{
+    id: 1,
+    club: 'Manchester United',
+    played: 38,
+    won: 31,
+    drawn: 4,
+    lost: 3,
+    points: 90,
+  }, {
+    id: 2,
+    club: 'Manchester City',
+    played: 38,
+    won: 29,
+    drawn: 3,
+    lost: 6,
+    points: 82
+  }, {
+    id: 3,
+    club: 'Tottenham Hotspur',
+    played: 38,
+    won: 26,
+    drawn: 6,
+    lost: 6,
+    points: 77
+  }, {
+    id: 4,
+    club: 'Chelsea',
+    played: 38,
+    won: 25,
+    drawn: 8,
+    lost: 5,
+    points: 70
+  }
+  ];
+  trackByPrimerleague(index: number, pri): number { return pri.id; }
+  onClick() {
+    console.log('Clicked!');
+  }
+  onInput(event) {
+    console.log(event);
+    this.message.push(event.target.value);
+
+  }
 
   // get price(): number {
   //   this.price = (<HTMLInputElement>event.target).value
@@ -40,40 +90,7 @@ export class ThanhsonComponent implements OnInit {
   //   this.isValue = ((this.giaSp * this.discount) / 100) * this.soLuong;
 
   // }
-  primerleague = [{
-    id: 1,
-    club: 'Manchester United',
-    played: 38,
-    won: 31,
-    drawn: 4,
-    lost: 3,
-    points: 90
-  }, {
-    id: 2,
-    club: 'Manchester City',
-    played: 38,
-    won: 29,
-    drawn: 3,
-    lost: 6,
-    points: 82
-  }, {
-    id: 3,
-    club: 'Tottenham Hotspur',
-    played: 38,
-    won: 26,
-    drawn: 6,
-    lost: 6,
-    points: 77
-  }, {
-    id: 4,
-    club: 'Chelsea',
-    played: 38,
-    won: 25,
-    drawn: 8,
-    lost: 5,
-    points: 70
-  }
-  ];
+
 
 
   constructor() { }
