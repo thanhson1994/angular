@@ -1,13 +1,13 @@
-<h1  [ngStyle]="{color:'red'}" [style.color]="'green'" >My name is {{name}}</h1>
+<h1 [ngStyle]="{color:'red'}" [style.color]="'green'">My name is {{name}}</h1>
 <form class="example-form">
 
   <mat-form-field class="example-full-width">
-    <input type="number" matInput placeholder="Giá Sản Phẩm" (keyup)="onKey($event)" >
+    <input type="number" matInput placeholder="Giá Sản Phẩm" (keyup)="onKey($event)">
 
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <input type="number" matInput placeholder="Số lượng" (keyup)="onKey1($event)" >
+    <input type="number" matInput placeholder="Số lượng" (keyup)="onKey1($event)">
 
   </mat-form-field>
 
@@ -20,5 +20,9 @@
 
 
 </form>
-<p> Thành Tiền :   {{isValue}}  </p>
-<lts-thanhson [round]="true" [avatarUrl]="'Thanh Sơn'"></lts-thanhson>
+<p> Thành Tiền : {{isValue}} </p>
+
+ <p [style.color]=" isColor? 'red' : 'blue'" > Giá sản phẩm : {{val}} </p>
+
+
+<lts-thanhson (change)="addAvalue($event)" [checked]="false" [avatarUrl]="'Thanh Sơn'" ></lts-thanhson>

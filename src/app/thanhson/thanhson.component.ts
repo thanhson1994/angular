@@ -1,6 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import {  Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
+import {
+  FormControl
+} from '@angular/forms';
+import {
+  Input
+} from '@angular/core';
+
 @Component({
   selector: 'lts-thanhson',
   templateUrl: './thanhson.component.html',
@@ -9,12 +21,18 @@ import {  Input } from '@angular/core';
 
 })
 export class ThanhsonComponent implements OnInit {
-  @Input() round: Boolean = false;
-  @Input() avatarUrl: string = '';
+  @Input() checked = false;
+  @Input() avatarUrl: string;
+  @Output() change = new EventEmitter();
+  @Output() checkGender = new EventEmitter();
+  @ViewChild('nameInput') name: ElementRef;
 
   title = 'Quản lí Event';
-  message = [];
-  currentHero = { name: 1123 };
+  messages: string[] = [];
+  message = '';
+  currentHero = {
+    name: 1123
+  };
   primerleague = [{
     id: 1,
     club: 'Manchester United',
@@ -47,17 +65,37 @@ export class ThanhsonComponent implements OnInit {
     drawn: 8,
     lost: 5,
     points: 70
+  }];
+
+  trackByPrimerleague(index: number, pri): number {
+    return pri.id;
   }
-  ];
-  trackByPrimerleague(index: number, pri): number { return pri.id; }
   onClick() {
     console.log('Clicked!');
   }
-  onInput(event) {
-    console.log(event);
-    this.message.push(event.target.value);
+  // onInput(event) {
+  //   console.log(event);
+  //   this.message.push(event.target.value);
+
+  // }
+  changeColor(event) {
+    this.change.emit();
+  }
+  updateMesssages() {
+    this.messages.push(this.message);
+    this.message = '';
 
   }
+  Check1() {
+    this.checkGender.emit();
+  }
+
+
+  sayHello(name: string) {
+    console.log('HELLO: ' + this.name.nativeElement.value);
+  }
+
+
 
   // get price(): number {
   //   this.price = (<HTMLInputElement>event.target).value
@@ -95,7 +133,6 @@ export class ThanhsonComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'lts-hero',
   templateUrl: './hero.component.html',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(public id: number,
+    public name: string,
+    public power: string,
+    public alterEgo?: string) { }
 
   ngOnInit() {
   }

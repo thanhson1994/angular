@@ -1,4 +1,5 @@
 <lts-min> </lts-min>
+<!-- <lts-hero></lts-hero> -->
 <!-- <lts-thanhson></lts-thanhson> -->
 <!-- <lts-thanhson>huhuihiu</lts-thanhson>
 <h1>{{title}}</h1>
@@ -119,3 +120,51 @@
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
+
+<!-- <p lts-special [isSpecial]="isSpecial"></p>
+<table>
+  <tr lts-special ></tr>
+</table>
+ -->
+<lts-card>
+  <header class="lts-card__title" data-header>Title</header>
+  <div class="lts-card__content">DAsasd ư sd qwk a wkdm asd ư má d2d asd wk ad</div>
+  <footer class="lts-card__footer">
+    <button class="btn btn-danger"> Action </button>
+  </footer>
+</lts-card>
+
+<div class="lts-card">
+  <header class="lts-card__title">Title</header>
+  <div class="lts-card__content">DAsasd ư sd qwk a wkdm asd ư má d2d asd wk ad</div>
+  <footer class="lts-card__footer">
+    <button class="btn btn-success"> Action </button>
+  </footer>
+
+</div>
+
+<div>
+  <!-- <lts-collapse-group>
+    <lts-collapse [title]="'First block'" [selected]="true">
+      <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum exercitationem optio odio veniam cumque qui. Tempora
+        aliquam eaque iure, temporibus ratione ducimus libero maxime doloremque ipsum obcaecati. Officia, voluptatem modi?</span>
+    </lts-collapse>
+    <lts-collapse [title]="'Second block'" [selected]="false">
+      <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum exercitationem optio odio veniam cumque qui. Tempora
+        aliquam eaque iure, temporibus ratione ducimus libero maxime doloremque ipsum obcaecati. Officia, voluptatem modi?</span>
+    </lts-collapse>
+  </lts-collapse-group> -->
+</div>
+<input #box (keyup.enter)="update(box.value)" (blur)="update(box.value)">
+<p>{{value}}</p>
+<input #newHero (keyup.enter)="addHero(newHero.value)" (blur)="addHero(newHero.value); newHero.value='' ">
+
+<button (click)="addHero(newHero.value)">Add</button>
+
+<ul>
+  <li *ngFor="let hero of heroes">{{hero}}</li>
+</ul>
+
+<lts-form></lts-form>
+<!-- <lts-contact-form></lts-contact-form> -->
+<lts-reactive-form></lts-reactive-form>

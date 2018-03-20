@@ -1,0 +1,59 @@
+<form novalidate (ngSubmit)="onSubmit(form.value)" #form="ngForm" class="row justify-content-md-center">
+  <div class="col-md-8">
+    <div class="form-group row">
+      <label for="example-text-input" class="col-md-2 col-form-label">Name:</label>
+      <div class="col-md-10">
+        <input class="form-control" type="text" id="example-text-input" name="contactName"
+        #contactName="ngModel" [(ngModel)]="contact.contactName" required>
+      </div>
+    </div>
+    <div class="col alert alert-danger" role="alert" *ngIf="contactName?.errors?.required && contactName?.touched">
+      Name is required!
+    </div>
+    <div class="form-group row">
+      <label for="example-email-input" class="col-md-2 col-form-label">Email:</label>
+      <div class="col-md-10">
+        <input class="form-control" type="email" id="example-email-input" name="email"
+         #email="ngModel" [(ngModel)]="contact.email" required>
+      </div>
+    </div>
+    <div class="col alert alert-danger" role="alert" *ngIf="email.errors?.required && (email.touched ||email.dirty)">
+      Email is required!
+    </div>
+    <div class="form-group row">
+      <label for="example-url-twt" class="col-md-2 col-form-label">Password:</label>
+      <div class="col-md-10">
+        <input class="form-control" type="password" id="example-url-twt" name="password"
+        #password="ngModel" [(ngModel)]="contact.password" required>
+      </div>
+    </div>
+    <fieldset ngModelGroup="social">
+      <div class="form-group row">
+        <label for="example-url-fb" class="col-md-2 col-form-label">Facebook:</label>
+        <div class="col-md-10">
+          <input class="form-control" type="url" id="example-url-fb" name="facebook"
+          #facebook="ngModel" [(ngModel)]="contact.facebook" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="example-tel-input" class="col-md-2 col-form-label">Tel:</label>
+        <div class="col-md-10">
+          <input class="form-control" type="tel" id="example-tel-input"
+          #telephone="ngModel" [(ngModel)]="contact.tel" name="telephone" required>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group row">
+      <div class="col-md-10 offset-md-2">
+        <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+      </div>
+    </div>
+  </div>
+
+</form>
+<p> Form value: </p>
+<pre>{{form.value|json }} </pre>
+
+<p>Form contact name error:</p>
+<pre>{{ form.controls.contactName.errors |json}}</pre>

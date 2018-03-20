@@ -50,15 +50,49 @@
 <div *ngFor="let pri of primerleague; trackBy :  trackByPrimerleague">{{pri.id}} - {{pri.club}}</div>
 <h1> {{title}} </h1>
 <div>
-  <input type="text" (change)="onInput($event)">
+  <!-- <input type="text" (change)="onInput($event)"> -->
   <button (click)="onClick()">Button...</button>
 </div>
-<ul *ngFor="let mess of message">
-  <li>{{mess}}</li>
-</ul>
+
 <input type="text" [(ngModel)]="currentHero.name" (ngModelChange)="currentHero.name=$event">
 <!-- <div>
   <img [src]="avatarUrl" [ngClass]="{'lts-avatar:round'}">
 </div> -->
-<p [ngClass]="{'lts-avatar':round}"> I love you {{ avatarUrl | json }} </p>
-<div>{{$any(currentHero).name}}</div>
+<p [ngClass]="{'lts-avatar': false }"> I love you {{ avatarUrl | json }} </p>
+<button (click)="changeColor($event)" type="button" class="btn btn-secondary btn-lg"> Button </button>
+
+<div>
+  <!-- <input type="text"
+    (keyup.enter)="updateMesssages()"
+    [(ngModel)]="message"
+  > -->
+  <input type="text" [value]="message" (input)="message = $event.target.value">
+  <button class="btn btn-danger" (click)="updateMesssages()">ngModel</button>
+</div>
+<ul *ngFor="let mess of messages">
+  <li>{{mess}}</li>
+</ul>
+<br>
+
+<div>
+  <input type="text" #nameInput>
+  <button class="btn btn-danger" (click)="sayHello()">Template Variable</button>
+</div>
+
+<!-- <form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name
+      <input class="form-control" name="name" required [(ngModel)]="hero.name">
+    </label>
+  </div>
+  <button type="submit" [disabled]="!heroForm.form.valid">Submit</button>
+</form>
+<div [hidden]="!heroForm.form.valid">
+  {{submitMessage}}
+</div> -->
+<!-- <Label>Are you married?:>
+  <input type="radio" name="options" id=""  [(ngModel)] > Yes
+  <input type="radio" name="yes" id="" value="N"> No
+  <button class="btn btn-danger" (click)="Check1()">Submit</button>
+</Label>
+<p></p> -->

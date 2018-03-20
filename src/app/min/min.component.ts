@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./min.component.scss']
 })
 export class MinComponent implements OnInit {
+
+  avatarUrl = 'Thanh Sơn 123' ;
   name: String = 'Lê Thanh Sơn';
+  val = 0;
   contacts = [{
     name: 'Lê Thanh Sơn',
     id: 1
@@ -23,6 +26,8 @@ export class MinComponent implements OnInit {
 
 
   ];
+  countColor = 0;
+  isColor = true;
   canSave = false;
   isSpecial = true;
   isValue;
@@ -70,6 +75,13 @@ export class MinComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  addAvalue(event) {
+    this.countColor++;
+    this.val++;
+    if (this.countColor % 2 === 0) {
+      this.isColor = true;
+    } else { this.isColor = false; }
   }
 
 

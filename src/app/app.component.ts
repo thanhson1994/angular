@@ -1,5 +1,5 @@
 import {
-  Component
+  Component, AfterViewInit
 } from '@angular/core';
 
 @Component({
@@ -39,9 +39,15 @@ export class AppComponent {
   canSave = true;
   isActive = true;
   tabIndex = 2;
-
-
-
+  value = '';
+  update(value: string) {
+    this.value = value;
+  }
+  addHero(newHero: string) {
+    if (newHero) {
+      this.heroes.push(newHero);
+    }
+  }
 
 
 
