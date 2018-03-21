@@ -17,7 +17,7 @@
          #email="ngModel" [(ngModel)]="contact.email" required>
       </div>
     </div>
-    <div class="col alert alert-danger" role="alert" *ngIf="email.errors?.required && (email.touched ||email.dirty)">
+    <div class="col alert alert-danger" role="alert" *ngIf="email?.errors?.required && (email.touched ||email.dirty)">
       Email is required!
     </div>
     <div class="form-group row">

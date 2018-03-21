@@ -19,6 +19,8 @@ import { CollapseComponent } from './collapse/collapse.component';
 import { CardComponent } from './card/card.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { SearchComponent } from './search/search.component';
 // import { LtComponent } from './lt/lt.component';
 // import { ImportComponent } from './import/import.component';
 
@@ -38,9 +40,12 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     CardComponent,
     ContactFormComponent,
     ReactiveFormComponent,
+    DialogComponent,
+    SearchComponent,
     // LtComponent,
     // ImportComponent
   ],
+  entryComponents: [ ReactiveFormComponent ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,

@@ -12,6 +12,7 @@ import { MatNativeDateModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const MODULE = [
   MatTabsModule,
@@ -25,7 +26,8 @@ const MODULE = [
   MatNativeDateModule,
   MatInputModule,
   MatAutocompleteModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatDialogModule
 ];
 
 
