@@ -5,6 +5,8 @@
       <input type="email" class="form-control" formControlName="username">
     </label>
   </div>
+<!-- <code> {{ form.getError('email','username') | json }}</code> -->
+
 
   <div class="col alert alert-danger" role="alert"  *ngIf="form.hasError('invalidusername', ['username']) &&
       form.get('username').touched">
@@ -24,7 +26,7 @@
       </label>
     </div>
     <div class="col alert alert-danger" role="alert"  *ngIf="form.hasError('passwordnotmatch', ['pw']) &&
-      form.get('pw').touched">
+      form.get('pw').touched && isSpecial">
     Password does not match
   </div>
   </div>

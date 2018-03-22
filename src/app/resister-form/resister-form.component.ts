@@ -8,8 +8,10 @@ return (users.includes(c.value)) ? {
   };
 }
 export function comparePassword(c: AbstractControl) {
-const v = c.value;
-return(v.password === v.confirmPassword) ? null : { passwordnotmatch: true};
+  const v = c.value;
+    return (v.password === v.confirmPassword) ? null : {
+      passwordnotmatch: true
+    };
 }
 
 
@@ -22,18 +24,26 @@ return(v.password === v.confirmPassword) ? null : { passwordnotmatch: true};
 export class ResisterFormComponent implements OnInit {
   form: FormGroup;
   constructor(private fb: FormBuilder) { }
+  isSpecial: boolean;
 
   ngOnInit() {
     this.form = this.fb.group({
-      username: ['', [Validators.required, forbiddenUsername(['admin', 'manager'])]],
+      username: ['', [Validators.required, Validators.email , forbiddenUsername(['admin', 'manager'])]],
       pw: this.fb.group({
         password: ['', Validators.required],
         confirmPassword: ['', Validators.required]
-      }, {validators: comparePassword})
+      }, {
+        validator: comparePassword
+      })
     });
   }
   onSubmit() {
+    if (this.form.value.password === this.form.value.confirmPassword) {
+      this.isSpecial = true;
+      // this.isSpecial = !this.isSpecial;
     console.log(this.form);
+    }
+
   }
 
 }
