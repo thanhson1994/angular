@@ -1,0 +1,11 @@
+form {
+background-color: lightcoral;
+ }
+ form input .ng-invalid .ng-touched {
+   border-left: 5px solid red;
+ }
+
+form input .ng-valid .ng-touched {
+   border-left: 5px solid green;
+ }
+

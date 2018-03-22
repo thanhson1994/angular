@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, OnChanges } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { get } from 'http';
+// import { get } from 'http';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -9,21 +9,19 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./reactive-form.component.scss']
 })
 export class ReactiveFormComponent implements OnInit {
-
+   list = {name: 'Lê Thanh Sơn',
+  email: 'ltsonht1994@gmail.com', password: '********', facebook: 'facebook.com'         };
+  data: any;
   rfContact: FormGroup;
   constructor(private fb: FormBuilder) {
     // this.createForm();
   }
   createForm() {
-    // this.rfContact = this.fb.group({
-    //   contactName: this.fb.control('', [Validators.required]),
-    //   email: this.fb.control('', [Validators.required]),
-    //   password: this.fb.control('', [Validators.required]),
-    //   social: this.fb.group({
-    //     facebook: this.fb.control(''),
-    //     twitter: this.fb.control('')
-    //   })
-    // });
+
+  }
+
+  rebuildForm() {
+this.rfContact = this.data;
   }
 
   ngOnInit() {
@@ -39,7 +37,7 @@ export class ReactiveFormComponent implements OnInit {
         this.fb.control('')
       ])
 
-    });
+    }, {updateOn: 'submit'});
     setTimeout(() => {
       this.rfContact.patchValue({contactName: 'Lê Thanh Sơn', email: 'ltsonht1994@gmail.com' });
 
@@ -47,10 +45,11 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSubmit() {
+   this.data = this.rfContact ;
     console.log(this.rfContact);
     this.rfContact.reset();
     // this.dialogRef.close();
-    console.log(this.rfContact.value)
+    console.log(this.rfContact.value) ;
 
   }
   // onNoClick(): void {
@@ -69,6 +68,3 @@ removeTel(index: number) {
   this.tels.removeAt(index);
 }
 }
-
-
-
