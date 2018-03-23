@@ -5,8 +5,6 @@
       <input type="email" class="form-control" formControlName="username">
     </label>
   </div>
-<!-- <code> {{ form.getError('email','username') | json }}</code> -->
-
 
   <div class="col alert alert-danger" role="alert"  *ngIf="form.hasError('invalidusername', ['username']) &&
       form.get('username').touched">
@@ -32,5 +30,6 @@
   </div>
   <div class="form-group">
     <button class="btn btn-info" type="submit">Submit</button>
+
   </div>
 </form>

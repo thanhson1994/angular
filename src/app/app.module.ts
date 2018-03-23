@@ -22,6 +22,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { SearchComponent } from './search/search.component';
 import { ResisterFormComponent } from './resister-form/resister-form.component';
+import { OustandingComponent } from './oustanding/oustanding.component';
 // import { LtComponent } from './lt/lt.component';
 // import { ImportComponent } from './import/import.component';
 
@@ -44,6 +45,7 @@ import { ResisterFormComponent } from './resister-form/resister-form.component';
     DialogComponent,
     SearchComponent,
     ResisterFormComponent,
+    OustandingComponent,
     // LtComponent,
     // ImportComponent
   ],

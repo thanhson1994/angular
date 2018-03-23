@@ -9,8 +9,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./reactive-form.component.scss']
 })
 export class ReactiveFormComponent implements OnInit {
-  //  list = {name: 'Lê Thanh Sơn',
-  // email: 'ltsonht1994@gmail.com', password: '********', facebook: 'facebook.com'         };
+   list = {name: '',
+  email: '', password: '', facebook: ''         };
+  name: string;
+  email: '';
+  password: '';
   data: any;
   rfContact: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -22,33 +25,48 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit() {
     this.rfContact = this.fb.group({
-      contactName: ['', [Validators.required, Validators.maxLength(10)]],
+      contactName: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(3)]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      social: this.fb.group({
-        facebook: '',
+      facebook: ['', Validators.required]    });
 
-      })
-
-
-    });
-    // setTimeout(() => {
-    //   this.rfContact.patchValue({contactName: 'Lê Thanh Sơn', email: 'ltsonht1994@gmail.com' });
-
-    // }, 1000);
   }
 
   onSubmit() {
-    // Submit form. Lấy dữ liệu đã submit đi mô đó...
-   this.data = this.rfContact ;
+    // Submit form. Lấy dữ liệu đã submit
+  //  this.list.name = this.rfContact.value.contactName.toString() ;
+  //  this.list.email = this.rfContact.value.email;
+   this.name = this.rfContact.value.contactName.toString();
+   this.email = this.rfContact.value.email;
+   this.list.password = this.rfContact.value.password;
+   this.list.facebook = this.rfContact.value.facebook;
+
+
+
     console.log(this.rfContact);
-    // this.rfContact.reset();
+    this.rfContact.reset();
+   console.log(this.list.name);
+
     // this.dialogRef.close();
-    console.log(this.rfContact.value) ;
+    console.log(this.rfContact) ;
+    return this.list;
+
 
   }
 
+
   rebuildForm() {
+    console.log(this.list.email);
+    console.log(this.list.name);
+
+
+    //  this.rfContact.value = this.data;
+    setTimeout(() => {
+      console.log(this.list.email) ;
+      this.rfContact.patchValue({
+        contactName : `${this.name}` , email: `${this.email}` , password: this.list.password, facebook:   this.list.facebook });
+
+    }, 1000);
     // Lấy lại dữ liệu đã submit
 
     // this.rfContact = this.data;
