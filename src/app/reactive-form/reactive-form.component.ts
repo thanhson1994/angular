@@ -9,8 +9,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./reactive-form.component.scss']
 })
 export class ReactiveFormComponent implements OnInit {
-   list = {name: 'Lê Thanh Sơn',
-  email: 'ltsonht1994@gmail.com', password: '********', facebook: 'facebook.com'         };
+  //  list = {name: 'Lê Thanh Sơn',
+  // email: 'ltsonht1994@gmail.com', password: '********', facebook: 'facebook.com'         };
   data: any;
   rfContact: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -18,10 +18,6 @@ export class ReactiveFormComponent implements OnInit {
   }
   createForm() {
 
-  }
-
-  rebuildForm() {
-this.rfContact = this.data;
   }
 
   ngOnInit() {
@@ -32,39 +28,35 @@ this.rfContact = this.data;
       social: this.fb.group({
         facebook: '',
 
-      }),
-      tels: this.fb.array([
-        this.fb.control('')
-      ])
+      })
 
-    }, {updateOn: 'submit'});
-    setTimeout(() => {
-      this.rfContact.patchValue({contactName: 'Lê Thanh Sơn', email: 'ltsonht1994@gmail.com' });
 
-    }, 1000);
+    });
+    // setTimeout(() => {
+    //   this.rfContact.patchValue({contactName: 'Lê Thanh Sơn', email: 'ltsonht1994@gmail.com' });
+
+    // }, 1000);
   }
 
   onSubmit() {
+    // Submit form. Lấy dữ liệu đã submit đi mô đó...
    this.data = this.rfContact ;
     console.log(this.rfContact);
-    this.rfContact.reset();
+    // this.rfContact.reset();
     // this.dialogRef.close();
     console.log(this.rfContact.value) ;
 
   }
+
+  rebuildForm() {
+    // Lấy lại dữ liệu đã submit
+
+    // this.rfContact = this.data;
+      }
+
   // onNoClick(): void {
   //   this.dialogRef.close();
   // }
 
-get tels(): FormArray {
-  return this.rfContact.get('tels') as FormArray;
-}
 
-addTel() {
-  this.tels.push(this.fb.control(''));
-}
-
-removeTel(index: number) {
-  this.tels.removeAt(index);
-}
 }
