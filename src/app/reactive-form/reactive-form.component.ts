@@ -10,7 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class ReactiveFormComponent implements OnInit {
    list = {name: '',
-  email: '', password: '', facebook: ''         };
+  email: '', password: '', facebook: ''};
   name: string;
   email: '';
   password: '';

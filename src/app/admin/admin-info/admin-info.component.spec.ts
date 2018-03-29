@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpecialComponent } from './special.component';
+import { AdminInfoComponent } from './admin-info.component';
 
-describe('SpecialComponent', () => {
-  let component: SpecialComponent;
-  let fixture: ComponentFixture<SpecialComponent>;
+describe('AdminInfoComponent', () => {
+  let component: AdminInfoComponent;
+  let fixture: ComponentFixture<AdminInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpecialComponent ]
+      declarations: [ AdminInfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpecialComponent);
+    fixture = TestBed.createComponent(AdminInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

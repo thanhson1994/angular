@@ -10,21 +10,24 @@ import {ImportModule} from './import/import.module';
 import { AppComponent } from './app.component';
 import { ThanhsonComponent } from './thanhson/thanhson.component';
 import { MinComponent } from './min/min.component';
-import { HeroComponent } from './hero/hero.component';
-import { SpecialComponent } from './special/special.component';
+
 import { FormComponent } from './form/form.component';
 
 import { CollapseGroupComponent } from './collapse-group/collapse-group.component';
 import { CollapseComponent } from './collapse/collapse.component';
-import { CardComponent } from './card/card.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DialogComponent } from './dialog/dialog.component';
-import { SearchComponent } from './search/search.component';
 import { ResisterFormComponent } from './resister-form/resister-form.component';
 import { OustandingComponent } from './oustanding/oustanding.component';
-// import { LtComponent } from './lt/lt.component';
-// import { ImportComponent } from './import/import.component';
+import { AppRoutingModule } from './app-routing.module';
+// import { AdminComponent } from './admin/admin.component';
+import { ProductModule } from './product/product.module';
+import { HeroesModule } from './heroes/heroes.module';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
+// import { AdminInfoComponent } from './admin-info/admin-info.component';
+
+
 
 
 @NgModule({
@@ -32,20 +35,17 @@ import { OustandingComponent } from './oustanding/oustanding.component';
     AppComponent,
     ThanhsonComponent,
     MinComponent,
-    HeroComponent,
-    SpecialComponent,
     FormComponent,
-
-
     CollapseGroupComponent,
     CollapseComponent,
-    CardComponent,
     ContactFormComponent,
     ReactiveFormComponent,
     DialogComponent,
-    SearchComponent,
     ResisterFormComponent,
     OustandingComponent,
+    // AdminComponent,
+    // AdminInfoComponent
+
     // LtComponent,
     // ImportComponent
   ],
@@ -55,9 +55,11 @@ import { OustandingComponent } from './oustanding/oustanding.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    ImportModule
-
-
+    ImportModule,
+    ProductModule,
+    CrisisCenterModule,
+    HeroesModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
